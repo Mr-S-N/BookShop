@@ -1,6 +1,6 @@
 USE [bookShop]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateBook]    Script Date: 27.10.2021 22:36:14 ******/
+/****** Object:  StoredProcedure [dbo].[UpdateBook]    Script Date: 27.10.2021 22:50:58 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +17,7 @@ ALTER PROCEDURE [dbo].[UpdateBook]
 AS 
 BEGIN 
      SET NOCOUNT ON 
-
+BEGIN TRANSACTION
 	UPDATE Books
     SET Name = @Name, Year= @Yaer, PageCount = @PageCount
     WHERE ID = @BookId;
@@ -32,7 +32,8 @@ BEGIN
             @BookID,
 			@AuthorId
           ) 
-
+IF (@@error <> 0)
+        ROLLBACK
 		   INSERT INTO BooksGenres
           (                    
             BookID,
@@ -43,5 +44,8 @@ BEGIN
             @BookID,
 			@GenreId
           ) 
+		  IF (@@error <> 0)
+        ROLLBACK
 
+COMMIT
 END 
