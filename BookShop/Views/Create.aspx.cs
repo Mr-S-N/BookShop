@@ -10,8 +10,8 @@ namespace BookShop
         private readonly BookService bookService = new BookService();
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.FillDropDownList(ref ddlAuthors, bookService.GetAllAuthors());
-            this.FillDropDownList(ref ddlGenres, bookService.GetAllGenres());
+            this.FillDropDownList(ddlAuthors, bookService.GetAllAuthors());
+            this.FillDropDownList(ddlGenres, bookService.GetAllGenres());
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)

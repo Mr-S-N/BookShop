@@ -10,7 +10,7 @@ namespace BookShop.Extensions
 {
     public static class PageExtensions
     {
-        public static void FillDropDownList(this Page page, ref DropDownList ddl, DataTable dT)
+        public static void FillDropDownList(this Page page,  DropDownList ddl, DataTable dT)
         {
             ddl.DataSource = dT;
             ddl.DataBind();

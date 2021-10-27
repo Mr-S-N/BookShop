@@ -20,8 +20,8 @@ namespace BookShop
             txYear.Text = row["Year"].ToString();
             txPagesCount.Text = row["PageCount"].ToString();
 
-            this.FillDropDownList(ref ddlAuthors, bookService.GetAllAuthors());
-            this.FillDropDownList(ref ddlGenres, bookService.GetAllGenres());
+            this.FillDropDownList(ddlAuthors, bookService.GetAllAuthors());
+            this.FillDropDownList(ddlGenres, bookService.GetAllGenres());
         }
 
 
