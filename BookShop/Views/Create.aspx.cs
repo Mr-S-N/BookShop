@@ -1,4 +1,5 @@
-﻿using BookShop.Services;
+﻿using BookShop.Extensions;
+using BookShop.Services;
 using System;
 using System.Web.UI;
 
@@ -9,17 +10,8 @@ namespace BookShop
         private readonly BookService bookService = new BookService();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlAuthors.DataSource = bookService.GetAllAuthors();
-            ddlAuthors.DataBind();
-            ddlAuthors.DataTextField = "Name";
-            ddlAuthors.DataValueField = "ID";
-            ddlAuthors.DataBind();
-
-            ddlGenres.DataSource = bookService.GetAllGenres();
-            ddlGenres.DataBind();
-            ddlGenres.DataTextField = "Name";
-            ddlGenres.DataValueField = "ID";
-            ddlGenres.DataBind();
+            this.FillDropDownList(ref ddlAuthors, bookService.GetAllAuthors());
+            this.FillDropDownList(ref ddlGenres, bookService.GetAllGenres());
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)

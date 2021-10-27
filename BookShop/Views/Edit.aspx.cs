@@ -1,7 +1,9 @@
-﻿using BookShop.Services;
+﻿using BookShop.Extensions;
+using BookShop.Services;
 using System;
 using System.Data;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace BookShop
 {
@@ -18,18 +20,10 @@ namespace BookShop
             txYear.Text = row["Year"].ToString();
             txPagesCount.Text = row["PageCount"].ToString();
 
-            ddlAuthors.DataSource = bookService.GetAllAuthors();
-            ddlAuthors.DataBind();
-            ddlAuthors.DataTextField = "Name";
-            ddlAuthors.DataValueField = "ID";
-            ddlAuthors.DataBind();
-
-            ddlGenres.DataSource = bookService.GetAllGenres();
-            ddlGenres.DataBind();
-            ddlGenres.DataTextField = "Name";
-            ddlGenres.DataValueField = "ID";
-            ddlGenres.DataBind();
+            this.FillDropDownList(ref ddlAuthors, bookService.GetAllAuthors());
+            this.FillDropDownList(ref ddlGenres, bookService.GetAllGenres());
         }
+
 
         protected void EditButton_Click(object sender, EventArgs e)
         {

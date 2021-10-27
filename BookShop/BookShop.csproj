@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Extensions\PageExtensions.cs" />
     <Compile Include="Views\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
