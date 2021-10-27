@@ -1,0 +1,11 @@
+USE [bookShop]
+GO
+/****** Object:  StoredProcedure [dbo].[SelectAllAuthors]    Script Date: 27.10.2021 22:33:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SelectAllAuthors]
+AS
+SELECT * FROM Authors
+GO;

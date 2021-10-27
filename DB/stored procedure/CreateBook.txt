@@ -1,0 +1,58 @@
+USE [bookShop]
+GO
+/****** Object:  StoredProcedure [dbo].[CreateBook]    Script Date: 27.10.2021 22:33:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER     PROCEDURE [dbo].[CreateBook] 
+       @Name varchar(255)   , 
+       @Yaer int  , 
+       @PageCount  int,
+	   @AuthorId int,
+	   @GenreID int
+AS 
+BEGIN 
+     SET NOCOUNT ON 
+	 Declare @BookID int
+     INSERT INTO Books
+          (                    
+            Name,
+            Year,
+            PageCount                         
+          ) 
+     VALUES 
+          ( 
+            @Name,
+            @Yaer,
+            @PageCount
+          ) 
+
+     SET @BookID = SCOPE_IDENTITY()
+
+	 INSERT INTO BooksAuthors
+          (                    
+            BookID,
+            AuthorID                       
+          ) 
+     VALUES 
+          ( 
+            @BookID,
+			@AuthorId
+          ) 
+
+		   INSERT INTO BooksGenres
+          (                    
+            BookID,
+            GenreID                       
+          ) 
+     VALUES 
+          ( 
+            @BookID,
+			@GenreID
+          ) 
+
+END 
+

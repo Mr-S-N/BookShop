@@ -1,0 +1,47 @@
+USE [bookShop]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateBook]    Script Date: 27.10.2021 22:36:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[UpdateBook]
+       @BookId int,
+	   @Name varchar(255),
+	   @Yaer int,
+	   @PageCount int,
+	   @AuthorId int,
+	   @GenreId int
+      
+AS 
+BEGIN 
+     SET NOCOUNT ON 
+
+	UPDATE Books
+    SET Name = @Name, Year= @Yaer, PageCount = @PageCount
+    WHERE ID = @BookId;
+
+	 INSERT INTO BooksAuthors
+          (                    
+            BookID,
+            AuthorID                       
+          ) 
+     VALUES 
+          ( 
+            @BookID,
+			@AuthorId
+          ) 
+
+		   INSERT INTO BooksGenres
+          (                    
+            BookID,
+            GenreID                       
+          ) 
+     VALUES 
+          ( 
+            @BookID,
+			@GenreId
+          ) 
+
+END 
