@@ -27,13 +27,22 @@ namespace BookShop
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
-            bookService.EditBook(
-              txId.Text,
-              txName.Text,
-              txYear.Text,
-              txPagesCount.Text,
-              ddlAuthors.SelectedItem.Value,
-              ddlGenres.SelectedItem.Value);
+            try
+            {
+                bookService.EditBook(
+                  txId.Text,
+                  txName.Text,
+                  txYear.Text,
+                  txPagesCount.Text,
+                  ddlAuthors.SelectedItem.Value,
+                  ddlGenres.SelectedItem.Value);
+
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowUpdate", "ShowUpdate('" + true + "');", true);
+            }
+            catch (Exception)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "ShowUpdate", "ShowUpdate('" + false + "');", true);
+            }
         }
     }
 }
