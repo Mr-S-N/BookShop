@@ -46,11 +46,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Book shop</a>
+                    <a class="navbar-brand" runat="server" href="~/Views/">Book shop</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Create">Create</a></li>
+                        <li><a runat="server" href="~/Views/Create">Create</a></li>
                     </ul>
                 </div>
             </div>

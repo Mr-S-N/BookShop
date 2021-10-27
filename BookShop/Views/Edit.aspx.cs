@@ -14,32 +14,32 @@ namespace BookShop
 
             var dt = bookService.GetBook(bookId);
             DataRow row = dt.Rows[0];
-            TextBoxName.Text = row["Name"].ToString();
-            TextBoxYear.Text = row["Year"].ToString();
-            TextBoxpagesCount.Text = row["PageCount"].ToString();
-                
-            DropDownList1.DataSource = bookService.GetAllAuthors();
-            DropDownList1.DataBind();
-            DropDownList1.DataTextField = "Name";
-            DropDownList1.DataValueField = "ID";
-            DropDownList1.DataBind();
+            txName.Text = row["Name"].ToString();
+            txYear.Text = row["Year"].ToString();
+            txPagesCount.Text = row["PageCount"].ToString();
 
-            DropDownList2.DataSource = bookService.GetAllGenres();
-            DropDownList2.DataBind();
-            DropDownList2.DataTextField = "Name";
-            DropDownList2.DataValueField = "ID";
-            DropDownList2.DataBind();
+            ddlAuthors.DataSource = bookService.GetAllAuthors();
+            ddlAuthors.DataBind();
+            ddlAuthors.DataTextField = "Name";
+            ddlAuthors.DataValueField = "ID";
+            ddlAuthors.DataBind();
+
+            ddlGenres.DataSource = bookService.GetAllGenres();
+            ddlGenres.DataBind();
+            ddlGenres.DataTextField = "Name";
+            ddlGenres.DataValueField = "ID";
+            ddlGenres.DataBind();
         }
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
             bookService.EditBook(
-              IdTextBox.Text,
-              TextBoxName.Text,
-              TextBoxYear.Text,
-              TextBoxpagesCount.Text,
-              DropDownList1.SelectedItem.Value,
-              DropDownList2.SelectedItem.Value);
+              txId.Text,
+              txName.Text,
+              txYear.Text,
+              txPagesCount.Text,
+              ddlAuthors.SelectedItem.Value,
+              ddlGenres.SelectedItem.Value);
         }
     }
 }

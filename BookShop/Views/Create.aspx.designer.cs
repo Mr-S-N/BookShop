@@ -15,49 +15,49 @@ namespace BookShop
     {
 
         /// <summary>
-        /// TextBoxName control.
+        /// txName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxName;
+        protected global::System.Web.UI.WebControls.TextBox txName;
 
         /// <summary>
-        /// TextBoxYear control.
+        /// txYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxYear;
+        protected global::System.Web.UI.WebControls.TextBox txYear;
 
         /// <summary>
-        /// TextBoxpagesCount control.
+        /// txPagesCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxpagesCount;
+        protected global::System.Web.UI.WebControls.TextBox txPagesCount;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlAuthors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAuthors;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// ddlGenres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenres;
 
         /// <summary>
         /// CreateButton control.

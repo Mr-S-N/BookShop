@@ -4,24 +4,24 @@
     <form>
         <div class="form-group">
             <label>Name</label>
-            <asp:TextBox ID="TextBoxName" placeholder="name" class="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txName" placeholder="name" class="form-control" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Year</label>
-            <asp:TextBox ID="TextBoxYear" placeholder="Year" class="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txYear" placeholder="Year" class="form-control" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Pages Count</label>
-            <asp:TextBox ID="TextBoxpagesCount" placeholder="Pages Count" class="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txPagesCount" placeholder="Pages Count" class="form-control" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <label>Author</label>
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="ddlAuthors" runat="server">
             </asp:DropDownList>
         </div>
         <div class="form-group">
             <label>Genre</label>
-            <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:DropDownList ID="ddlGenres" runat="server">
             </asp:DropDownList>
         </div>
         <asp:Button ID="CreateButton" runat="server" Text="Create" OnClick="CreateButton_Click" />
