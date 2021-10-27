@@ -11,17 +11,8 @@ namespace BookShop
 {
 
 
-    public partial class Contact
+    public partial class Create
     {
-
-        /// <summary>
-        /// IdTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdTextBox;
 
         /// <summary>
         /// TextBoxName control.
@@ -69,12 +60,12 @@ namespace BookShop
         protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
-        /// EditButton control.
+        /// CreateButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditButton;
+        protected global::System.Web.UI.WebControls.Button CreateButton;
     }
 }
